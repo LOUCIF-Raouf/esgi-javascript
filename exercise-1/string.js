@@ -76,6 +76,10 @@ function leet(str) {
 console.log(leet("anaconda"));
 
 
-function verlan() {
-    
+function verlan(str) {
+        return str.split("").reverse().join("");
+
 }
+console.log(verlan("hello"));
+
+
