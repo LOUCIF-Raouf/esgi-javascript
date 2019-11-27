@@ -24,13 +24,13 @@ function capitalize(str) {
 
 console.log(capitalize('raouf loucif'));
 
-function camelCse(str) {
+function camelCase(str) {
     if (typeof str !== "string" || str.length === 0) return "";
 
     return capitalize(str).replace(' ', '');
 }
 
-console.log(camelCse('raouf loucif'));
+console.log(camelCase()('raouf loucif'));
 
 function snake_case(str) {
     if (typeof str !== "string" || str.length === 0) return "";
@@ -46,7 +46,6 @@ console.log(snake_case("Hello World, i am john"));
 
 function leet(str) {
     if (typeof str !== "string" || str.length === 0) return "";
-
     let char = '';
     let newstr = '';
     for (let i = 0; i < str.length; i++) {
@@ -99,3 +98,7 @@ function yoda(str) {
 
 
 console.log(yoda("hello word"));
+
+function prop_access() {
+    
+}
