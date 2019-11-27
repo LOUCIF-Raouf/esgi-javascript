@@ -12,6 +12,7 @@ console.log(ucfirst(null));
 console.log(ucfirst({}));
 
 function capitalize(str) {
+    if (typeof str !== "string" || str.length === 0) return "";
 
     return str.toLowerCase()
         .split(' ')
@@ -24,12 +25,16 @@ function capitalize(str) {
 console.log(capitalize('raouf loucif'));
 
 function camelCse(str) {
+    if (typeof str !== "string" || str.length === 0) return "";
+
     return capitalize(str).replace(' ', '');
 }
 
 console.log(camelCse('raouf loucif'));
 
 function snake_case(str) {
+    if (typeof str !== "string" || str.length === 0) return "";
+
     return str.toLowerCase().split(' ')
         .map(function (item) {
             return item.replace(',', '');
@@ -40,6 +45,8 @@ function snake_case(str) {
 console.log(snake_case("Hello World, i am john"));
 
 function leet(str) {
+    if (typeof str !== "string" || str.length === 0) return "";
+
     let char = '';
     let newstr = '';
     for (let i = 0; i < str.length; i++) {
@@ -77,9 +84,18 @@ console.log(leet("anaconda"));
 
 
 function verlan(str) {
-        return str.split("").reverse().join("");
+    if (typeof str !== "string" || str.length === 0) return "";
+
+    return str.split("").reverse().join("");
 
 }
+
 console.log(verlan("hello"));
 
+function yoda(str) {
+    if (typeof str !== "string" || str.length === 0) return "";
+    return str.split(' ').reverse().join(' ');
+}
 
+
+console.log(yoda("hello word"));
