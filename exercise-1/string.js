@@ -26,11 +26,10 @@ console.log(capitalize('raouf loucif'));
 
 function camelCase(str) {
     if (typeof str !== "string" || str.length === 0) return "";
-
     return capitalize(str).replace(' ', '');
 }
 
-console.log(camelCase()('raouf loucif'));
+console.log("camelCase: "+camelCase('hello world'));
 
 function snake_case(str) {
     if (typeof str !== "string" || str.length === 0) return "";
@@ -100,5 +99,5 @@ function yoda(str) {
 console.log(yoda("hello word"));
 
 function prop_access() {
-    
+
 }
