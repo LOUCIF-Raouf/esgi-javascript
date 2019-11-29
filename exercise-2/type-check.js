@@ -2,8 +2,8 @@ function type_check_v1(val, type) {
     let typeVal = typeof val;
 
     if (typeVal !== 'object' && typeVal === type) return true;
-    if (typeVal === "object" && type == "null") return "null";
-    if (typeVal === "object" && type == "array") return "array";
+    if (typeVal === "object" && type == "null") return true;
+    if (typeVal === "object" && type == "array") return true;
     else return false ;
 
 
