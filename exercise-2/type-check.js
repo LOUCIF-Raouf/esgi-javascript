@@ -10,6 +10,34 @@ function type_check_v1(val, type) {
 
 }
 
+function type_check_v2(check, config)
+{
+    for (const key of Object.keys(config)) {
+        switch (key) {
+            case 'value':
+                if(JSON.stringify(check) !== JSON.stringify(config[key])) return false;
+            case 'enum':
+                let i = 0;
+                for (; i < config[key].length; i++) {
+                    const element = array[i];
+
+                    if(type_check_v2(check, {value: element})) break;
+                }
+                if(i === config[key].length) return false;
+            case 'type':
+                if(!type_check_v1(check, config[key])) return false;
+        }
+
+    }
+
+    return true;
+}
+
+
+
+
+
+
 // //les null et array return null et array
 // console.log("number_true: ", type_check_v1(1, "number"));
 // console.log("number_false: ", type_check_v1(1, "string"));
