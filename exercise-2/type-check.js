@@ -10,6 +10,16 @@ function type_check_v1(val, type) {
 
 }
 
+function type_check_v1(vari,type) {
+    switch (typeof vari) {
+        case 'object':
+            if(Array.isArray(vari)) return type==="array";
+            if(vari === null) return type==="null";
+        default :
+            return typeof vari ===type;
+    }
+}
+
 function type_check_v2(check, config)
 {
     for (const key of Object.keys(config)) {
@@ -34,6 +44,10 @@ function type_check_v2(check, config)
 }
 
 
+console.log(type_check_v2("foo", {type: "string", value: "foo"}));
+
+
+
 
 
 
@@ -51,4 +65,28 @@ function type_check_v2(check, config)
 // console.log("array_false: ", type_check_v1([0,2], "object"));
  console.log("nullNotObject_false ", type_check_v1(null, "object"));
 
-
+// "objectSuperMatch": {
+//     "input": [
+//         {
+//             toto: {
+//                 fi: 3,
+//                 fa: {
+//                     trim: " test "
+//                 }
+//             }
+//         },
+//         {
+//             type: "object",
+//             properties: {
+//                 toto: {
+//                     type: "object",
+//                     properties: {
+//                         fi: { value: 3 },
+//                         fa: { enum: [3, "string", { trim: " test " }] }
+//                     }
+//                 }
+//             }
+//         }
+//     ],
+//         "output": true
+// }
