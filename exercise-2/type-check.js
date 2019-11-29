@@ -1,7 +1,7 @@
 function type_check_v1(val, type) {
     let typeVal = typeof val;
     console.log(typeVal);
-    if(typeVal === type && typeVal === 'object') return false;
+    if(typeVal === type && type === 'object') return false;
     if (typeVal === type && typeVal !== 'undefined') return true;
     if (typeVal === "object" && type!=="object" && (type === "null" || type === "array")) return true;
 
