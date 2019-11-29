@@ -4,6 +4,7 @@ function type_check_v1(val, type) {
     if (typeVal !== 'object' && typeVal === type) return true;
     if (typeVal === "object" && type == "null") return true;
     if (typeVal === "object" && type == "array") return true;
+    if (typeVal === "object" && type == "object") return true;
     else return false ;
 
 
