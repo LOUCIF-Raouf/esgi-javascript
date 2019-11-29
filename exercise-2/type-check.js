@@ -29,7 +29,7 @@ function type_check_v2(check, config)
             case 'enum':
                 let i = 0;
                 for (; i < config[key].length; i++) {
-                    const element = array[i];
+                    const element = config[key][i];
 
                     if(type_check_v2(check, {value: element})) break;
                 }
